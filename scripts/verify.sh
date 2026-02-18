@@ -78,11 +78,16 @@ done
 
 # 7. Dry-run session-start hook
 echo -n "Dry-running session-start.sh ... "
-hook_output=$(cd "$PLUGIN_ROOT" && bash hooks/session-start.sh 2>&1)
-if echo "$hook_output" | python3 -m json.tool > /dev/null 2>&1; then
-    echo "OK (valid JSON)"
+if hook_output=$(cd "$PLUGIN_ROOT" && bash hooks/session-start.sh 2>&1); then
+    if echo "$hook_output" | python3 -m json.tool > /dev/null 2>&1; then
+        echo "OK (valid JSON)"
+    else
+        echo "FAIL (valid exit but invalid JSON)"
+        echo "  Output: $hook_output"
+        errors=$((errors + 1))
+    fi
 else
-    echo "FAIL (invalid output)"
+    echo "FAIL (non-zero exit)"
     echo "  Output: $hook_output"
     errors=$((errors + 1))
 fi

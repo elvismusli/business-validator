@@ -36,7 +36,11 @@ Business Validator is a Claude Code plugin that takes your raw business idea and
 ### Prerequisites
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI installed
-- `pandoc` for PDF export (optional): `brew install pandoc`
+- For PDF export (optional), one of:
+  - **macOS:** `brew install pandoc` + `brew install --cask basictex` (LaTeX engine, most reliable)
+  - **macOS (alternative):** `brew install pandoc` + `pip install weasyprint` (lighter, no LaTeX)
+  - **Linux:** `apt install pandoc texlive-latex-base` or `apt install pandoc` + `pip install weasyprint`
+  - The Markdown report is always generated regardless of PDF engine availability
 
 ### Install
 
@@ -114,7 +118,7 @@ business-validator/
 
 - **File-based data flow** — Each skill writes its section to disk. Results are persistent, inspectable, and survive context compaction.
 - **Parallel research** — Market research and competitor analysis run simultaneously via subagents.
-- **Run ID isolation** — Each validation session gets a unique `YYYY-MM-DD-<slug>` identifier. No ambiguity, no file conflicts.
+- **Run ID isolation** — Each validation session gets a unique `YYYY-MM-DD-<slug>-<hhmm>` identifier. No ambiguity, no file conflicts.
 - **Hybrid interaction** — Interactive intake captures context that web search alone can't provide. Autonomous research then leverages Claude's tools efficiently.
 
 ## Works With

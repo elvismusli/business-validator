@@ -18,7 +18,7 @@ You MUST have the run_id and read both the business brief AND the market researc
 
 ## Inputs
 
-- **run_id**: From idea-intake (format: `YYYY-MM-DD-<slug>`)
+- **run_id**: From idea-intake (format: `YYYY-MM-DD-<slug>-<hhmm>`)
 - **Business brief**: `docs/business-briefs/<run_id>.md`
 - **Market research**: `docs/reports/<run_id>/01-market-research.md`
 - **Competitor analysis**: `docs/reports/<run_id>/02-competitor-analysis.md`
@@ -86,6 +86,8 @@ If the brief lacks detail, ask the user via `AskUserQuestion`:
 - Months to break-even in each scenario
 
 ### Step 4: Write Output
+
+Ensure the output directory exists: `mkdir -p docs/reports/<run_id>`
 
 Save to `docs/reports/<run_id>/03-financial-model.md`:
 

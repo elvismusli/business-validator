@@ -15,10 +15,11 @@ Do NOT proceed to market research, competitor analysis, or any other analysis sk
 
 ## Run ID Generation
 
-Generate the run_id as: `YYYY-MM-DD-<slug>` where:
+Generate the run_id as: `YYYY-MM-DD-<slug>-<hhmm>` where:
 - `YYYY-MM-DD` is today's date
 - `<slug>` is the idea name lowercased, spaces replaced with hyphens, max 30 chars
-- Example: `2026-02-19-ai-tutor-platform`
+- `<hhmm>` is the current time in hours and minutes (24h format) to ensure uniqueness
+- Example: `2026-02-19-ai-tutor-platform-1435`
 
 The run_id is used by ALL subsequent skills. Pass it explicitly when invoking them.
 

@@ -15,7 +15,7 @@ You MUST have the run_id before starting. Read the business brief at `docs/busin
 
 ## Inputs
 
-- **run_id**: Provided by idea-intake or the user (format: `YYYY-MM-DD-<slug>`)
+- **run_id**: Provided by idea-intake or the user (format: `YYYY-MM-DD-<slug>-<hhmm>`)
 - **Business brief**: `docs/business-briefs/<run_id>.md`
 
 ## Output
@@ -78,6 +78,8 @@ Search for:
 - Regulatory changes or risks
 
 ### Step 4: Write Output
+
+Ensure the output directory exists: `mkdir -p docs/reports/<run_id>`
 
 Save to `docs/reports/<run_id>/01-market-research.md`:
 

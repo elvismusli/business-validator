@@ -27,7 +27,7 @@ Business Validator provides a pipeline of skills for validating business ideas. 
 
 ## Run ID
 
-Every validation session has a **run_id** in the format `YYYY-MM-DD-<slug>` (e.g. `2026-02-19-ai-tutor`).
+Every validation session has a **run_id** in the format `YYYY-MM-DD-<slug>-<hhmm>` (e.g. `2026-02-19-ai-tutor-1435`).
 
 - `idea-intake` generates the run_id from the date and idea name
 - All subsequent skills receive the run_id as context

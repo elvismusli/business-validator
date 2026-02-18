@@ -21,7 +21,7 @@ If any file is missing, stop and inform the user which skill needs to run first.
 
 ## Inputs
 
-- **run_id**: From idea-intake (format: `YYYY-MM-DD-<slug>`)
+- **run_id**: From idea-intake (format: `YYYY-MM-DD-<slug>-<hhmm>`)
 - All four files listed above
 
 ## Output
@@ -72,6 +72,8 @@ For each risk:
 - Contingency plan
 
 ### Step 4: Write Output
+
+Ensure the output directory exists: `mkdir -p docs/reports/<run_id>`
 
 Save to `docs/reports/<run_id>/04-risk-assessment.md`:
 

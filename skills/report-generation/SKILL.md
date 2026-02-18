@@ -21,7 +21,7 @@ If any section is missing, inform the user and invoke the missing skill with the
 
 ## Inputs
 
-- **run_id**: From idea-intake (format: `YYYY-MM-DD-<slug>`)
+- **run_id**: From idea-intake (format: `YYYY-MM-DD-<slug>-<hhmm>`)
 - **Business brief**: `docs/business-briefs/<run_id>.md`
 - **All 4 section files** in `docs/reports/<run_id>/`
 
@@ -99,6 +99,8 @@ Decision framework:
 If GO or CONDITIONAL GO, provide 5-7 concrete next steps ordered by priority.
 
 ### Step 4: Save Report
+
+Ensure the output directory exists: `mkdir -p docs/reports/<run_id>`
 
 Write to `docs/reports/<run_id>/REPORT.md`
 
