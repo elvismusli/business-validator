@@ -2,7 +2,7 @@
 
 **AI-powered business idea validation pipeline for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).**
 
-One slash command. Six autonomous research agents. A full Go/No-Go report with market sizing, competitor analysis, financial modeling, and risk assessment — delivered in minutes, not weeks.
+One slash command. Seven autonomous skills. A full Go/No-Go report with market sizing, competitor analysis, financial modeling, and risk assessment — delivered in minutes, not weeks.
 
 ## What It Does
 
@@ -12,7 +12,10 @@ Business Validator is a Claude Code plugin that takes your raw business idea and
 /validate-idea
     |
     v
- Idea Intake (interactive)
+ Brainstorming (interactive dialogue)
+    |
+    v
+ Idea Intake (structured questions)
     |
     +---> Market Research ----+
     |     (TAM/SAM/SOM,       |
@@ -54,7 +57,7 @@ claude plugins add /path/to/business-validator
 /validate-idea
 ```
 
-Answer 7 quick questions about your idea. Claude handles the rest autonomously — researching markets, analyzing competitors, building financial models, assessing risks, and assembling your report.
+Claude starts with a brainstorming dialogue to refine your idea, then collects structured details and handles the rest autonomously — researching markets, analyzing competitors, building financial models, assessing risks, and assembling your report.
 
 For a quick market overview without the full pipeline:
 
@@ -66,6 +69,7 @@ For a quick market overview without the full pipeline:
 
 | Section | What You Get |
 |---------|-------------|
+| **Brainstorming** | Collaborative dialogue to refine the raw idea before validation |
 | **Executive Summary** | One-page overview with key findings and verdict |
 | **Market Research** | TAM/SAM/SOM with sources, growth trends, regulatory landscape |
 | **Competitive Landscape** | 5-10 competitors analyzed, comparison tables, positioning map, market gaps |
@@ -101,7 +105,8 @@ business-validator/
     session-start.sh                # Injects meta-skill at startup
   skills/
     using-business-validator/       # Meta-skill (loaded automatically)
-    idea-intake/                    # Interactive business idea collection
+    brainstorming/                  # Refine raw idea through dialogue
+    idea-intake/                    # Structured business idea collection
     market-research/                # Autonomous market research via web
     competitor-analysis/            # Autonomous competitor discovery
     financial-modeling/             # Financial model with scenarios

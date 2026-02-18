@@ -13,7 +13,8 @@ Business Validator provides a pipeline of skills for validating business ideas. 
 
 | Skill | Purpose | When to Use |
 |-------|---------|-------------|
-| `business-validator:idea-intake` | Collect business idea details | First step — always start here |
+| `business-validator:brainstorming` | Refine raw idea through dialogue | First step — always start here |
+| `business-validator:idea-intake` | Collect structured business details | After brainstorming |
 | `business-validator:market-research` | TAM/SAM/SOM, trends, regulation | After idea intake |
 | `business-validator:competitor-analysis` | Find and compare competitors | After idea intake (parallel with market-research) |
 | `business-validator:financial-modeling` | Unit economics, revenue forecast | After market research |
@@ -45,6 +46,7 @@ All data is stored in the project's `docs/` directory:
 
 ```dot
 digraph pipeline {
+    "brainstorming" [shape=box, style=filled, fillcolor="#fff3e0"];
     "idea-intake" [shape=box, style=filled, fillcolor="#e8f5e9"];
     "market-research" [shape=box];
     "competitor-analysis" [shape=box];
@@ -52,6 +54,7 @@ digraph pipeline {
     "risk-assessment" [shape=box];
     "report-generation" [shape=box, style=filled, fillcolor="#e3f2fd"];
 
+    "brainstorming" -> "idea-intake";
     "idea-intake" -> "market-research";
     "idea-intake" -> "competitor-analysis";
     "market-research" -> "financial-modeling";
@@ -63,9 +66,10 @@ digraph pipeline {
 
 ## Key Rules
 
-1. **Always start with idea-intake** — other skills need the business brief and run_id
-2. **market-research and competitor-analysis can run in parallel** — both depend only on the brief
-3. **financial-modeling needs market data** — wait for market-research to complete
-4. **risk-assessment synthesizes everything** — needs all prior sections
-5. **report-generation is always last** — assembles all sections into one report
-6. **Always pass run_id explicitly** — never use wildcards or "most recent" to find files
+1. **Always start with brainstorming** — refines the raw idea before structured intake
+2. **Then idea-intake** — other skills need the business brief and run_id
+3. **market-research and competitor-analysis can run in parallel** — both depend only on the brief
+4. **financial-modeling needs market data** — wait for market-research to complete
+5. **risk-assessment synthesizes everything** — needs all prior sections
+6. **report-generation is always last** — assembles all sections into one report
+7. **Always pass run_id explicitly** — never use wildcards or "most recent" to find files

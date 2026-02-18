@@ -38,6 +38,7 @@ fi
 # 4. Check all SKILL.md files exist
 skills=(
     "using-business-validator"
+    "brainstorming"
     "idea-intake"
     "market-research"
     "competitor-analysis"
