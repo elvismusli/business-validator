@@ -7,10 +7,10 @@ description: Use when a user wants to validate a business idea — collects all 
 
 ## Overview
 
-Collect all information needed to validate a business idea through a structured series of questions. The output is a business brief saved to `docs/business-briefs/<run_id>.md` where run_id is generated as `YYYY-MM-DD-<idea-slug>`.
+Collect all information needed to validate a business idea through a structured series of questions. The output is a business brief saved to `docs/business-briefs/<run_id>.md` where run_id is generated as `YYYY-MM-DD-<slug>-<hhmm>`.
 
 <HARD-GATE>
-The brainstorming skill MUST have been completed before this skill runs. If brainstorming has not been done, invoke business-validator:brainstorming first.
+The brainstorming skill MUST have been completed before this skill runs. If there is no evidence of a completed brainstorming session in the conversation, STOP and tell the user to run brainstorming first. Do NOT invoke brainstorming from here — the commands and pipeline handle ordering.
 
 Do NOT proceed to market research, competitor analysis, or any other analysis skill until the business brief is complete and saved. Every field in the brief must be filled. The run_id must be generated and communicated to the user.
 </HARD-GATE>

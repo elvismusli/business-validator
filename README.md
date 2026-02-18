@@ -69,7 +69,6 @@ For a quick market overview without the full pipeline:
 
 | Section | What You Get |
 |---------|-------------|
-| **Brainstorming** | Collaborative dialogue to refine the raw idea before validation |
 | **Executive Summary** | One-page overview with key findings and verdict |
 | **Market Research** | TAM/SAM/SOM with sources, growth trends, regulatory landscape |
 | **Competitive Landscape** | 5-10 competitors analyzed, comparison tables, positioning map, market gaps |
