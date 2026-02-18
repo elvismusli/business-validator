@@ -6,5 +6,10 @@
     "name": "Elvis Musli"
   },
   "license": "MIT",
+  "homepage": "https://github.com/elvismusli/business-validator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elvismusli/business-validator.git"
+  },
   "keywords": ["business", "validation", "market-research", "competitor-analysis", "financial-modeling"]
 }

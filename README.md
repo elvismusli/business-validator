@@ -121,6 +121,10 @@ business-validator/
 - **Run ID isolation** — Each validation session gets a unique `YYYY-MM-DD-<slug>-<hhmm>` identifier. No ambiguity, no file conflicts.
 - **Hybrid interaction** — Interactive intake captures context that web search alone can't provide. Autonomous research then leverages Claude's tools efficiently.
 
+## Platform
+
+This plugin is built for **[Claude Code](https://docs.anthropic.com/en/docs/claude-code)** (Anthropic's CLI). It uses Claude Code's plugin system: skills, hooks, slash commands, and the Task/Skill tools. It is not compatible with other AI coding assistants.
+
 ## Works With
 
 - Any business type: SaaS, e-commerce, marketplaces, services, hardware, consumer apps
