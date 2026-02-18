@@ -1,0 +1,6 @@
+# Reports (generated, not committed by default)
+docs/reports/
+docs/business-briefs/
+
+# OS files
+.DS_Store
